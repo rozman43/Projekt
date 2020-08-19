@@ -1,0 +1,1 @@
+slovar = {"Ali so elementarne funkcije odvedljive na definicijskem obmocju?":"da"}
