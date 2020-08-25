@@ -1,1 +1,10 @@
-slovar = {"Ali so elementarne funkcije odvedljive na definicijskem obmocju?":"da"}
+slovar = {"Ali so elementarne funkcije odvedljive na definicijskem območju?":"da",
+"Vrsti, kjer se predznaki členov spreminjajo, pravimo _____________ vrsta?":"alternirajoča",
+"Ali je vsaka absolutno konvergentna vrsta konvergentna?":"da",
+"Kako pravimo grupi, kjer je operacija komutativna?": "abelova",
+"Priimek bivšega NBA igralca in matematika po katerem so poimenovane matrike?": "jordan",
+"Prvi neničelni element vrstice matrike v vrsticni kanonični formi imenujemo?": "pivot",
+"Formula za izračun določenega integrala se imenuje? ": "leibnizova",
+"Krivuljo enakih stroškov imenujemo?":"izokosta",
+"Tržna struktura, v kateri en sam prodajalec dobavlja blago za množico kupcev, je?":"monopol",
+"_________ pogodba (angl. future) je zelo natančna pogodba, v kateri se določ kaj, kdaj, kje in za kakšno ceno bo dostavljeno.":"terminska"}

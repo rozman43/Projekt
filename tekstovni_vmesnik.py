@@ -34,7 +34,9 @@ def pozeni_vmesnik():
             break
         elif rezultat == model.PRAVILEN_ODGOVOR:
             igra.pravilni_odgovori().append(odgovor)
+            igra.naslednje()
             izpis_igre(igra)
         elif rezultat == model.NAPACEN_ODGOVOR:
             igra.napacni_odgovori().append(odgovor)
+            igra.naslednje()
             izpis_igre(igra)
