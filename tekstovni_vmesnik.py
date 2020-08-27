@@ -4,7 +4,8 @@ def izpis_igre(igra):
     return """
         Število napak: {}
         Število pravilnih odgovorov: {}
-        """.format(igra.napake(), igra.pravilni())
+        Trenutno vprašanje: {}
+        """.format(igra.napake(), igra.pravilni(), igra.trenutno_vprasanje)
 
 def izpis_zmage(igra):
     if igra.zmaga():
