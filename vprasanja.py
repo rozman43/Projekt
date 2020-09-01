@@ -1,5 +1,5 @@
 slovar = {"Ali so elementarne funkcije odvedljive na definicijskem območju?":"da",
-"Vrsti, kjer se predznaki členov spreminjajo, pravimo _____________ vrsta?":"alternirajoča",
+"Vrsti, kjer se predznaki členov spreminjajo, pravimo _____________ vrsta?":"alternirajoca",
 "Ali je vsaka absolutno konvergentna vrsta konvergentna?":"da",
 "Kako pravimo grupi, kjer je operacija komutativna?": "abelova",
 "Priimek bivšega NBA igralca in matematika po katerem so poimenovane matrike?": "jordan",
