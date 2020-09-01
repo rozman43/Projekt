@@ -1,5 +1,6 @@
-import random
+
 from vprasanja import slovar
+import random 
 
 STEVILO_DOVOLJENIH_NAPAK = 2
 STEVILO_PRAVILNIH = 5
@@ -10,60 +11,41 @@ ZMAGA = "W"
 PORAZ = "X"
 ZACETEK = "S"
 
-def sez_vprasanj(slovar):
-        seznam = []
-        for vprasanje in slovar.keys():
-            seznam.append(vprasanje)
-        return seznam
 
 class Igra:
-    def __init__(self, slovar, odgovor=None):
-        vsa_vprasanja = sez_vprasanj(slovar)
-        vprasanje = choice(vsa_vprasanja)
-        self.trenutno_vprasanje = vprasanje
-        self.pravilen_odgovor = slovar[vprasanje]
-        if odgovor == None:
-            self.odgovor = []
-        else:
-            self.odgovor = odgovor
+    def __init__(self, stevilo_vprasanj):
+        "Prvo smo slovar spremenili v seznam. Potem pa nam sample vrne seznam (stevilo_vprasanj) toliko vprasanj iz seznama vprasanj"
+        self.vprasanja = random.sample(list(slovar), stevilo_vprasanj)
+        self.pravileni_odgovori = 0
+        self.st_trenutnega_vprasanja = 0
     
-    def naslednje(self):
-        del slovar[self.trenutno_vprasanje]
-        vprasanje = choice(slovar.keys())
-        self.trenutno_vprasanje = vprasanje
-        self.pravilen_odgovor = slovar[vprasanje]
-
-    def napacni_odgovori(self):
-        napacni = []
-        if self.odgovor != self.pravilen_odgovor:
-            napacni.append(self.odgovor)
-        return napacni
-
-    def pravilni_odgovori(self):
-        pravilni = []
-        if self.odgovor == self.pravilen_odgovor:
-            pravilni.append(self.odgovor)
-        return pravilni
-
-    def napake(self):
-        return len(self.napacni_odgovori()) - 1
-
-    def pravilni(self):
-        return len(self.pravilni_odgovori())
-
-    def zmaga(self):
-        return self.pravilni() == STEVILO_PRAVILNIH
+    def st_pravilni_odgovori(self): 
+        "vrne stevilo pravilnih odgovorov"
+        return self.pravileni_odgovori
     
+    def st_napacni_odgovori(self):
+        "vrne stevilo napacnih odgovorov"
+        return self.st_trenutnega_vprasanja - self.pravileni_odgovori
+    
+    def trenutno_vprasanje(self):
+        "vrne trenutno vprasanje"
+        return self.vprasanja[self.st_trenutnega_vprasanja]
+
     def poraz(self):
-        if self.napake() > STEVILO_DOVOLJENIH_NAPAK:
-            return True
-        else:
-            return False
+        return self.st_napacni_odgovori() > STEVILO_DOVOLJENIH_NAPAK
+    
+    def zmaga(self):
+        return self.pravileni_odgovori >= STEVILO_PRAVILNIH 
+
 
     def ugibaj(self, odgovor):
+        "metoda ugibaj preveri igralcev odgovor, pri tem pa poveca st trenutnega vprasanja za +1"
         if odgovor == "":
             return NI_ODGOVORA
-        elif odgovor == self.pravilen_odgovor:
+        pravilni_odgovor = slovar[self.trenutno_vprasanje()]
+        self.st_trenutnega_vprasanja += 1
+        if odgovor == pravilni_odgovor:
+            self.pravileni_odgovori += 1
             if self.zmaga():
                 return ZMAGA
             else:
@@ -75,9 +57,9 @@ class Igra:
                 return NAPACEN_ODGOVOR
 
 def nova_igra():
-    return Igra(slovar)
+    return Igra(STEVILO_PRAVILNIH + STEVILO_DOVOLJENIH_NAPAK)
 
-class Kviz:
+class Matquiz:
     def __init__(self):
         self.igre = {}
 

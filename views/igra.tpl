@@ -1,21 +1,21 @@
 %import model
-%rebase("base.tpl", title="Kviz")
+%rebase("base.tpl", title="Mat_Quiz")
 
-  <h1>Kviz</h1>
+  <h1>Mat-Quiz</h1>
 
   <blockquote>
-    <b>{{igra.trenutno_vprasanje}}</b>
+    <b>{{igra.trenutno_vprasanje()}}</b>
   </blockquote>
 
   <table>
     <tr>
       <td>
-        Število napak: <b>{{igra.napake()}}</b>
+        Število napak: <b>{{igra.st_napacni_odgovori()}}</b>
       </td>
     </tr>
     <tr>  
       <td>
-        Število pravilnih odgovorov: <b>{{igra.pravilni()}}</b>
+        Število pravilnih odgovorov: <b>{{igra.st_pravilni_odgovori()}}</b>
       </td>
     </tr>
   </table>
