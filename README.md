@@ -7,4 +7,8 @@ Za sodelovanje v tem kvizu si mora posameznik prenesti datoteke iz tega repozito
 ## AVTOR
 Rok Rozman
 
+### Opomba
+Če vas zanima zakaj nisem odstranil *.DS_Store* datoteke iz repozitorija, je zato ker sem enkrat to naredil in sem imel potem veliko problemov z mergem teh sprememb. To sem zapisal tudi pod komentar v enem od commitov.
+Ter razlog zakaj repozitorija Vislice ni na mojem profilu je, ker sem po nesreči dal pod *private* repozitorij.
+
 
