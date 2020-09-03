@@ -1,8 +1,8 @@
 %import model
 %rebase("base.tpl", title="Mat_Quiz")
 
-  <h1>Mat-Quiz</h1>
-
+<h1>Mat-Quiz</h1>
+  
   <blockquote>
     <b>{{igra.trenutno_vprasanje()}}</b>
   </blockquote>
@@ -22,6 +22,8 @@
 
 %if poskus == model.ZMAGA:
   <h1>ZMAGA!</h1>
+  <b>Za začetek nove igre kliknite na gumb Nova igra.</b>
+  <h3> </h3>
 
   <form action="/nova_igra/" method="post">
     <button type="submit">Nova igra</button>
@@ -29,6 +31,8 @@
 
 %elif poskus == model.PORAZ:
   <h1>IZGUBILI STE!</h1>
+  <b>Za začetek nove igre kliknite na gumb Nova igra.</b>
+  <h3> </h3>
 
   <form action="/nova_igra/" method="post">
     <button type="submit">Nova igra</button>
